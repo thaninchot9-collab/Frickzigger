@@ -1686,7 +1686,7 @@ function goHome(){
 
 
 /* เพลงหน้าเมนู */
-const bgm=new Audio("bgm.mp3");bgm.preload="none";bgm.loop=true;bgm.volume=.6;
+const bgm=new Audio("bgm (1).mp3");bgm.preload="none";bgm.loop=true;bgm.volume=.6;
 let musicOn=lsGet("mtts_music")!=="0";
 function musicUI(){const on=!bgm.paused;["musicBtn","musicBtn2"].forEach(i=>$(i).textContent=on?"⏸ ปิดเพลง":"▶ เปิดเพลง");$("musicState").textContent=on?"กำลังเล่น: เพลงปลุกไฟในตัว":"ปิดเพลงอยู่"}
 function toggleMusic(){if(!bgm.paused){bgm.pause();musicOn=false}else{musicOn=true;bgm.play().then(musicUI).catch(()=>{})}lsSet("mtts_music",musicOn?"1":"0");musicUI()}
